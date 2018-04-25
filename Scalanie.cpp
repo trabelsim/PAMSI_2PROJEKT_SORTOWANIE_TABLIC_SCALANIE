@@ -13,7 +13,7 @@ x=najmniejsza;
 y=najmniejsza;
 z=posrednia+1;
 
-while((x<=posrednia)&&(z<=najwieksza)
+while((x<=posrednia)&&(z<=najwieksza))
 {
     if(a[x]<= a[z]){
         b[y]=a[x];
@@ -55,5 +55,12 @@ if(najmniejsza<najwieksza)
 
 int main()
 {
+    int ilosc;
+    cout<<" ----------------------------------------------------"<<endl;
+    cout<<"              SORTOWANIE PRZEZ SCALANIE              "<<endl;
+    cout<<"-----------------------------------------------------"<<endl;
 
+    cout<<"Prosze wprowadzic ilosc liczb ktore nalezy posortowac"<<endl;
+    cout<<"Nastepnie wcisnac ENTER"<<endl;
+    cin>>ilosc;
 }
