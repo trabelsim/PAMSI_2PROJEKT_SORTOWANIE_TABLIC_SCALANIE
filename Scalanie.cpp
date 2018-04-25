@@ -5,43 +5,43 @@ using namespace std;
 int a[100]; // Tablica elementow
 
 
-void scalanie(int najmniejsza, int posrednia, int najwieksza)
+void scalanie(int najmniejsza, int posrednia, int najwieksza)       // Funkcja potrzebna do przydzielenia odpowiednich pol do liczb i zamieniania kolejnosci w tablicy
 {
 int b[100];
 int x,y,z,pomocnicza;
-x=najmniejsza;
+x=najmniejsza;      // Zmienne pomocnicze
 y=najmniejsza;
-z=posrednia+1;
+z=posrednia+1;      //
 
-while((x<=posrednia)&&(z<=najwieksza))
+while((x<=posrednia)&&(z<=najwieksza))      //Warunek siê spe³ni jedynie gdy najmniejsza wartosc bedzie mniejsza od posredniej  a posrednia od najwiekszej
 {
-    if(a[x]<= a[z]){
+    if(a[x]<= a[z]){                        // Przepisanie wartosci najmniejszej do tablicy typu b.
         b[y]=a[x];
-        x++;}
+        x++;}                               // Zwiekszanie wartosci najmniejszej x.
     else
     {
-        b[y]=a[z];
+        b[y]=a[z];                          // Przepisanie wartosci posredniej do tablicy typu b.
         z++;
     }
-    y++;
+    y++;                                    // zwiekszanie wartosci najmniejszej.
 }
 if(x>posrednia){
-    for(pomocnicza=z;pomocnicza<=najwieksza;pomocnicza++){
-        b[y]=a[pomocnicza];
-        y++;}
+    for(pomocnicza=z;pomocnicza<=najwieksza;pomocnicza++){ // Dla zmiennej pomocniczej posredniej zwiekszanie jej wartosc do poki nie bedzie ona rowna najwiekszej.
+        b[y]=a[pomocnicza];                 // Przypisanie wartosci pomocniczej do tablicy b.
+        y++;}                               // zwiekszanie wartosci najmniejszej
     }
 else{
-    for(pomocnicza=x;pomocnicza<=posrednia;pomocnicza++){
-        b[y]=a[pomocnicza];
+    for(pomocnicza=x;pomocnicza<=posrednia;pomocnicza++){ // Dla zmiennej najmniejszej przepisanie jej wartosci do pomocniczej i zwikeszanie jej wartosc do posredniej
+        b[y]=a[pomocnicza];                 // Przepisanie wartosci pomocniczej do tablicy b.
         y++;
     }
-    for(pomocnicza=najmniejsza;pomocnicza<=najwieksza;pomocnicza++)
-        a[pomocnicza]=b[pomocnicza];
+    for(pomocnicza=najmniejsza;pomocnicza<=najwieksza;pomocnicza++) // Ostatni przypadek gdy pomocnicza jest rowna najmniejszej to nalezy zwiekszyc az do najwiekszej.
+        a[pomocnicza]=b[pomocnicza];                // Przepisanie pomocniczej z tabeli b do tabeli a.
 }
 }
 
-void sortuj_scalanie(int najmniejsza, int najwieksza){
-int posrednia;
+void sortuj_scalanie(int najmniejsza, int najwieksza){ // sortowanie tablicy
+int posrednia; //zmienna pomocnicza jak u gory.
 if(najmniejsza<najwieksza)
     {
     posrednia=(najmniejsza+najwieksza)/2;
