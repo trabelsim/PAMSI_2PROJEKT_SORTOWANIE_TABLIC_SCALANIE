@@ -40,6 +40,17 @@ else{
 }
 }
 
+void sortuj_scalanie(int najmniejsza, int najwieksza){
+int posrednia;
+if(najmniejsza<najwieksza)
+    {
+    posrednia=(najmniejsza+najwieksza)/2;
+    sortuj_scalanie(najmniejsza,posrednia);
+    sortuj_scalanie(posrednia+1,najwieksza);
+    scalanie(najmniejsza,posrednia,najwieksza);
+    }
+
+}
 
 
 int main()
