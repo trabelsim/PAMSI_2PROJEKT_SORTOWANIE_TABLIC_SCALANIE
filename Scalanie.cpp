@@ -5,10 +5,10 @@ using namespace std;
 int a[100]; // Tablica elementow
 
 
-void scalanie (int najmniejsza, int posrednia, int najwieksza)
+void scalanie(int najmniejsza, int posrednia, int najwieksza)
 {
-int x,y,z,b[100];
-int pomocnicza;
+int b[100];
+int x,y,z,pomocnicza;
 x=najmniejsza;
 y=najmniejsza;
 z=posrednia+1;
@@ -23,7 +23,7 @@ while((x<=posrednia)&&(z<=najwieksza))
         b[y]=a[z];
         z++;
     }
-    z++;
+    y++;
 }
 if(x>posrednia){
     for(pomocnicza=z;pomocnicza<=najwieksza;pomocnicza++){
@@ -63,4 +63,17 @@ int main()
     cout<<"Prosze wprowadzic ilosc liczb ktore nalezy posortowac"<<endl;
     cout<<"Nastepnie wcisnac ENTER"<<endl;
     cin>>ilosc;
+    cout<<endl;
+    cout<<"Prosze wprowadzic wartosci liczb ktore nalezy posortowac"<<endl;
+    for(int i=1;i<=ilosc;i++)
+        cin>>a[i];
+    sortuj_scalanie(1,ilosc);
+    cout<<endl;
+    cout<<"Sortowana tablica wedlug metody scalanie rowna sie : "<<endl;
+    cout<<endl<<endl;
+
+    for(int k=1;k<=ilosc;k++)
+        cout<<a[k]<<"   ";
+
+    cout<<endl;
 }
